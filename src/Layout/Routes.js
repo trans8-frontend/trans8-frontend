@@ -1,8 +1,9 @@
 import { Layout } from 'antd'
 import React from 'react'
 import { Route } from 'react-router'
+import Footers from '../Components/footer/Footer';
 import Headers from '../Components/Header/Header';
-import Group from '../images/Group.png'
+import Group from '../assets/Group 906.png'
 const { Header, Content, Footer } = Layout;
 const Routes = ({ component: Component, ...args }) => {
     
@@ -15,7 +16,9 @@ const Routes = ({ component: Component, ...args }) => {
                 <img src={Group} alt="group" style={{width:"100vw"}}/>    
                 <Component {...props} />
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+            <Footer style={{backgroundColor:"black"}}>
+                <Footers/>
+            </Footer>
         </Layout>
 
 
