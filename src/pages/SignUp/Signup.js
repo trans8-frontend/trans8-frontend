@@ -4,6 +4,7 @@ import "./Signup.css";
 import { Card, InputNumber } from "antd";
 import { Form, Input, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
+import { user_registration } from "../../redux-services/user-services/user-services";
 
 const layout = {
   labelCol: { span: 8 },
@@ -11,7 +12,7 @@ const layout = {
 };
 const Signup = () => {
   const onFinish = (values) => {
-    console.log("Success:", values);
+    user_registration(values)
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -25,7 +26,8 @@ const Signup = () => {
           <Col></Col>
           <Col md={8} lg={8} sm={12}>
             <Card bordered={true} className="card-style text-center">
-              <p>LOGIN REGISTRATION</p>
+            <span className="top-head"><span className="bold"> LOGIN</span> REGISTRATION</span>
+            <br />
               <span>
                 We'd love to discuss our flexible delivery solutions with you!
                 provide your <br />
@@ -48,7 +50,6 @@ const Signup = () => {
                   rules={[
                     {
                       required: true,
-
                       message: "Please input your username!",
                     },
                   ]}
@@ -61,12 +62,35 @@ const Signup = () => {
                   rules={[
                     {
                       required: true,
-
                       message: "Please input your last name!",
                     },
                   ]}
                 >
                   <Input />
+                </Form.Item>
+                <Form.Item
+                  label="Password"
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your password",
+                    },
+                  ]}
+                >
+                  <Input.Password />
+                </Form.Item>
+                <Form.Item
+                  label="Confirm Password"
+                  name="c_password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please confirm your password!",
+                    },
+                  ]}
+                >
+                  <Input.Password />
                 </Form.Item>
                 <Form.Item
                   label="Email"
@@ -84,7 +108,7 @@ const Signup = () => {
 
                 <Form.Item
                   label="Phone"
-                  name="phone"
+                  name="phone_number"
                   rules={[
                     {
                       required: true,
@@ -98,7 +122,7 @@ const Signup = () => {
 
                 <Row>
                   <p>
-                    Already a member ? <Link to="/">Login up</Link>
+                    Already a member ? <Link to="/" className="link-color">Login</Link>
                   </p>
                 </Row>
                 <Form.Item

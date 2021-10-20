@@ -1,32 +1,39 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './Login.css'
 import { Card } from 'antd';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { Link } from 'react-router-dom';
+import { user_login } from '../../redux-services/user-services/user-services';
 
 const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
 };
 const Login = () => {
+    const [loading, setLoading] = useState(false)
+
     const onFinish = (values) => {
-        console.log('Success:', values);
+        user_login(values , setLoading)
     };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+    if(loading){
+        return <div></div>
+    }
 
     return (
         <div >
             <Container className="container-height mt-5 mb-4">
                 <Row>
-                    <Col></Col>
+                    <Col md={2} lg={2} sm={0}></Col>
                     <Col md={8} lg={8} sm={12}>
-                        <Card bordered={true} className="card-style text-center" >
-                            <p>USER LOGIN</p>
-                            <span>We'd love to discuss our flexible delivery solutions with you! provide your <br />contact information and we'll reach out to you!</span>
+                        <Card bordered={true} className="card-style" >
+                            <span className="top-head"><span className="bold"> USER</span> LOGIN</span>
+                            <br />
+                            <p>We'd love to discuss our flexible delivery solutions with you! provide your <br />contact information and we'll reach out to you!</p>
                             <Form
                                 name="basic"
                                 labelCol={{ span: 8,}}
@@ -65,31 +72,28 @@ const Login = () => {
                                 <Row>  
                                    <Col>   
                                 <Form.Item
-                                    name="remember"
                                     valuePropName="checked"
                                     wrapperCol={{
                                         offset: 8,
                                         span: 16,
                                     }}
                                 >
-                                    <Checkbox>Remember me</Checkbox>
+                                    <Checkbox style={{fontSize:"18px",fontWeight:"400"}}>Remember me</Checkbox>
                                 </Form.Item>
                                 </Col>
                                 <Col>
                                 <Form.Item
-                                    name="remember"
-                                    valuePropName="checked"
                                     wrapperCol={{
                                         offset: 8,
                                         span: 16,
                                     }}
                                 >
-                                    <Link to="/forgot-password">Forgot Password</Link>
+                                    <Link to="/forgot-password" style={{color:"black",fontSize:"17px",fontWeight:"400"}}>Forgot Password</Link>
                                 </Form.Item>
                                 </Col>
                                 </Row>    
-                                <Row>
-                                    <p>Don't have an account ? <Link to="/sign-up">Sign up</Link></p>
+                                <Row className="mt-3 mb-3">
+                                    <span style={{fontSize:"17px"}}>Don't have an account ? <Link to="/sign-up" className="link-color">Sign up</Link></span>
                                 </Row>
                                 <Form.Item
                                     wrapperCol={{
@@ -97,14 +101,14 @@ const Login = () => {
                                         span: 16,
                                     }}
                                 >
-                                    <Button type="primary" htmlType="submit">
-                                        Submit
+                                    <Button  htmlType="submit" className="submit-button">
+                                        LOGIN
                                     </Button>
                                 </Form.Item>
                             </Form>
                         </Card>
                     </Col>
-                    <Col></Col>
+                    <Col md={2} lg={2} sm={0}></Col>
                 </Row>
             </Container>
         </div>

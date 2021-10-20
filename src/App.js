@@ -9,7 +9,7 @@ import Routes from './Layout/Routes';
 import Login from './pages/Login/Login';
 import Signup from './pages/SignUp/Signup';
 import Forgot from './pages/ForgotPassword/Forgot';
-import LandingPage from './pages/Landingpage/LandingPage';
+import GetQoute from './pages/GetQuote/GetQoute';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Routes path="/sign-up" component={Signup} />
           <Routes path="/landingPage" component={LandingPage} />
           <Routes path="/forgot-password" component={Forgot} />
+          <Routes path="/get-quote" component={GetQoute}/>
       </div>
     </Router>
   );
