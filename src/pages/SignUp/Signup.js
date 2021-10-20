@@ -31,7 +31,7 @@ const Signup = () => {
               <span>
                 We'd love to discuss our flexible delivery solutions with you!
                 provide your <br />
-                contact information and we'll reach out to you!
+                contact information and we'll reach out to you! .
               </span>
               <Form
                 name="basic"

@@ -7,13 +7,13 @@ import Shipping from "../../assets/shipping-fast-solid-svgrepo-com.png";
 const HamBurger = (props) => {
   return (
     <Menu right {...props} width={"12%"} height={"12%"}>
-      <a id="home" className="menu-item" href="/">
+      <a id="home" className="menu-item" href="/login">
         Login
       </a>
-      <a id="about" className="menu-item" href="/about">
+      <a id="about" className="menu-item" href="/get-quote">
         Quote
       </a>
-      <a id="contact" className="menu-item" href="/contact">
+      <a id="contact" className="menu-item" href="/sign-up">
         Registration
       </a>
     </Menu>
