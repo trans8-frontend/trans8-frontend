@@ -1,61 +1,69 @@
 import React from "react";
 import "./Footer.css";
 import Icon from "../../assets/Image 1.png";
-import Linkedin from "../../assets/linkedin.png";
-import Instagram from "../../assets/instagram-sketched.png";
-import Twitter from "../../assets/twitter1.png";
-import Facebook from "../../assets/facebook.png";
+import PhoneIcon from "@mui/icons-material/Phone";
+import MailIcon from "@mui/icons-material/Mail";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+
+const style = { background: "#0092ff", padding: "8px 0" };
 
 const Footers = () => {
   return (
     <>
-      <div className="grid_item">
-        <div style={{ paddingTop: "5px" }}>
+      <div className="mainfooter">
+        <div>
           <button className="footer_button">GET A QUOTE</button>
         </div>
         <div className="footer_1">
           <div className="second">
-            <img src={Icon} width="60" height="60" />
+            <MailIcon className="icon"></MailIcon>
             <p className="para">info@trans8.com</p>
-            <img src={Icon} width="60" height="60" />
+            <PhoneIcon className="icon2"></PhoneIcon>
             <p className="para2">444141242</p>
           </div>
         </div>
       </div>
-      <div className="footer_icon">
-        <div className="icon_f1">
-          <img src={Facebook} width="25" height="25" />
+
+      <div className="main2">
+        <div>
+          <FacebookIcon sx={{ fontSize: "1.8vw" }} style={{ color: "white" }} />
         </div>
-        <div className="icon_f2">
-          <img src={Twitter} width="25" height="25" />
+        <div>
+          <TwitterIcon sx={{ fontSize: "1.8vw" }} style={{ color: "white" }} />
         </div>
-        <div className="icon_f3">
-          <img src={Instagram} width="25" height="25" backgroundColor="white" />
+        <div>
+          <InstagramIcon
+            sx={{ fontSize: "1.8vw" }}
+            style={{ color: "white" }}
+          />
         </div>
-        <div className="icon_f4">
-          <img src={Linkedin} width="25" height="25" />
+        <div>
+          <LinkedInIcon sx={{ fontSize: "1.8vw" }} style={{ color: "white" }} />
         </div>
       </div>
 
-      <div className="hrLine"></div>
-      <div className=" footer-end">
+      <div className="maindiv">
         <div>
           <h6 style={{ color: "white" }}>
             @2021 Trans8 Logistics. All rights reserved
           </h6>
         </div>
-
-        <div className="footer_link">
-          <div className="link_f1">Home</div>
-          <div className="link_f1">About</div>
-          <div className="link_f1">Industries</div>
-          <div className="link_f1">Contact</div>
-          <div className="link_f1">Tracking</div>
-          <div className="link_f2">Login</div>
+        <div>
+          <div className="link">
+            <div className="link_f1">Home</div>
+            <div className="link_f1">About</div>
+            <div className="link_f1">Industries</div>
+            <div className="link_f1">Contact</div>
+            <div className="link_f1">Tracking</div>
+            <div className="link_f2">Login</div>
+          </div>
         </div>
       </div>
 
-      <div className="bottomPara">
+      <div className="footerBottom">
         <div className="paragraph">
           <p>
             Contrary to popular belief, Lorem Ipsum is not simply random text.

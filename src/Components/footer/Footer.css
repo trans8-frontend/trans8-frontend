@@ -1,39 +1,23 @@
 .mainfooter {
-  background-color: yellow;
-  display: grid;
-  grid-template-columns: 1fr 1fr 6fr;
-  grid-gap: 0px;
-}
-.grid_item {
   display: flex;
-  background-color: black;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  padding-left: 300px;
   justify-content: flex-start;
-}
-.footer_1 {
-  padding-left: 40px;
-}
-.footer_icon {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 10px;
-  padding-left: 640px;
-}
-.footer-end {
-  padding-bottom: 50px;
-  background-color: black;
-  display: flex;
-  justify-content: space-evenly;
   padding-top: 20px;
+}
+.main2 {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #242b2e;
+  padding-bottom: 20px;
 }
 
-.second {
+.footer_icon {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  padding-right: 370px;
+  border-bottom: 1px solid #242b2e;
 }
-.icon {
+icon{
   margin-top: 3px;
   color: white;
 }
@@ -43,6 +27,12 @@
   margin-right: 10px;
   color: white;
 }
+
+.second {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .para {
   padding-left: 10px;
   font-size: 18px;
@@ -62,11 +52,7 @@
   font-size: 35px;
   font-weight: 700;
 }
-.para_text {
-  padding-right: 1100px;
-  color: white;
-  opacity: 0.9;
-}
+
 .footer_button {
   background: black;
   padding: 10px;
@@ -79,9 +65,14 @@
   border-radius: 2px;
   margin-top: -30px;
 }
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+}
 .footer_link {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  background-color: blue;
 }
 
 .link_f1 {
@@ -89,18 +80,23 @@
   color: white;
 }
 .link_f2 {
-  padding-right: 100px;
+  padding-right: 10px;
   color: white;
-}
-
-.bottomPara {
-  display: grid;
-  grid-template-columns: 11fr 1fr;
-  grid-gap: 155px;
-  background-color: #000;
 }
 .paragraph {
-  padding-left: 270px;
-  padding-right: 85px;
   color: white;
+}
+.maindiv {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.link {
+  display: flex;
+  justify-content: space-between;
+}
+.para {
+  display: flex;
+  justify-content: space-evenly;
 }
