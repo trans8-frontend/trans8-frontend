@@ -68,30 +68,7 @@ const Signup = () => {
                 >
                   <Input />
                 </Form.Item>
-                <Form.Item
-                  label="Password"
-                  name="password"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your password",
-                    },
-                  ]}
-                >
-                  <Input.Password />
-                </Form.Item>
-                <Form.Item
-                  label="Confirm Password"
-                  name="c_password"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please confirm your password!",
-                    },
-                  ]}
-                >
-                  <Input.Password />
-                </Form.Item>
+                
                 <Form.Item
                   label="Email"
                   name="email"
@@ -118,6 +95,30 @@ const Signup = () => {
                   ]}
                 >
                   <Input />
+                </Form.Item>
+                <Form.Item
+                  label="Password"
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your password",
+                    },
+                  ]}
+                >
+                  <Input.Password />
+                </Form.Item>
+                <Form.Item
+                  label="Confirm Password"
+                  name="c_password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please confirm your password!",
+                    },
+                  ]}
+                >
+                  <Input.Password />
                 </Form.Item>
 
                 <Row>

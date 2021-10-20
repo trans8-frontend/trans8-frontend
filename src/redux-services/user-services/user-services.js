@@ -1,6 +1,6 @@
 import { message } from 'antd'
 import axios from 'axios'
-import { login, signup } from '../../Api/api'
+import { get_quote, login, signup } from '../../Api/api'
 
 
 // user login
@@ -31,5 +31,18 @@ export const user_registration=(values)=>{
     })
     .catch(err=>{
        message.error(err.response.data.message)
+    })
+}
+
+// get qoute
+export const create_quote=(values)=>{
+    axios.post(get_quote , values)
+    .then(response=>{
+        console.log(response)
+        message.success(response.data.message)
+    })
+    .catch(err=>{
+        console.log(err.response)
+        message.error(err.response.data.message)
     })
 }

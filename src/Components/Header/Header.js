@@ -35,7 +35,7 @@ const Header = () => {
       </div>
       <div>
         <div div className="brand_logo">
-          <img src={Logo} width="150" height="30" />
+          <img src={Logo}  height="30" />
         </div>
       </div>
       <div>
