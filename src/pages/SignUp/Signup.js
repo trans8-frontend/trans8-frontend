@@ -124,18 +124,12 @@ const Signup = () => {
                   <Input.Password />
                 </Form.Item>
 
-<<<<<<< Updated upstream
-                <Row>
-                  <p>
-                    Already a member ? <Link to="/login" className="link-color">Login</Link>
-=======
                 <div className="login">
                   <p style={{ fontSize: "1.1vw" }}>
                     Already a member ?{" "}
                     <Link to="/" className="link-color">
                       Login
                     </Link>
->>>>>>> Stashed changes
                   </p>
                 </div>
                 <Form.Item
