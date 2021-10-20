@@ -10,7 +10,11 @@ import Login from './pages/Login/Login';
 import Signup from './pages/SignUp/Signup';
 import Forgot from './pages/ForgotPassword/Forgot';
 import GetQoute from './pages/GetQuote/GetQoute';
+<<<<<<< Updated upstream
 import DashboardPage from './pages/Landingpage/LandingPage';
+=======
+import LandingPage from './pages/Landingpage/LandingPage'
+>>>>>>> Stashed changes
 
 function App() {
   return (

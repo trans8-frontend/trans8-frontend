@@ -12,7 +12,7 @@ const layout = {
 };
 const Signup = () => {
   const onFinish = (values) => {
-    user_registration(values)
+    user_registration(values);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -26,14 +26,17 @@ const Signup = () => {
           <Col></Col>
           <Col md={8} lg={8} sm={12}>
             <Card bordered={true} className="card-style text-center">
-            <span className="top-head"><span className="bold"> LOGIN</span> REGISTRATION</span>
-            <br />
+              <span className="top-head">
+                <span className="bold"> LOGIN</span> REGISTRATION
+              </span>
+              <br />
               <span>
                 We'd love to discuss our flexible delivery solutions with you!
                 provide your <br />
                 contact information and we'll reach out to you! .
               </span>
               <Form
+                className="mt-3"
                 name="basic"
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 16 }}
@@ -121,11 +124,20 @@ const Signup = () => {
                   <Input.Password />
                 </Form.Item>
 
+<<<<<<< Updated upstream
                 <Row>
                   <p>
                     Already a member ? <Link to="/login" className="link-color">Login</Link>
+=======
+                <div className="login">
+                  <p style={{ fontSize: "1.1vw" }}>
+                    Already a member ?{" "}
+                    <Link to="/" className="link-color">
+                      Login
+                    </Link>
+>>>>>>> Stashed changes
                   </p>
-                </Row>
+                </div>
                 <Form.Item
                   wrapperCol={{
                     offset: 8,

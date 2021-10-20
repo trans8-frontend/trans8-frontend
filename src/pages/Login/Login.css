@@ -1,13 +1,26 @@
-.container-height{
-    /* height:80vh; */
+.submit-button {
+  background: "#054B8B";
 }
-.submit-button{
-    background:"#054B8B"  
-  }
-[type=button], [type=reset], [type=submit], .submit-button{
-    background:#054B8B !important;
-    width:90%;
-    color:white !important;
-    height:45px !important;
-    border-radius: 5px !important;
-  }
+[type="button"],
+[type="reset"],
+[type="submit"],
+.submit-button {
+  background: #054b8b !important;
+  width: 90%;
+  color: white !important;
+  height: 45px !important;
+  border-radius: 5px !important;
+}
+.Remember {
+  font-size: 4vw;
+  padding-left: 20px;
+  background-color: red;
+  display: flex;
+  justify-content: space-evenly;
+}
+.singup {
+  display: flex;
+  justify-content: center;
+  /* padding-right: 220px; */
+  padding-bottom: 10px;
+}
