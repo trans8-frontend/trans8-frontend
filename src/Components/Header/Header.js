@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import {Link} from 'react-router-dom'
 import { slide as Menu } from "react-burger-menu";
 import Logo from "../../assets/Group937.png";
 import Shipping from "../../assets/shipping-fast-solid-svgrepo-com.png";
@@ -35,7 +36,7 @@ const Header = () => {
       </div>
       <div>
         <div div className="brand_logo">
-          <img src={Logo}  height="30" />
+         <Link to="/"> <img src={Logo}  height="30" /></Link>
         </div>
       </div>
       <div>
