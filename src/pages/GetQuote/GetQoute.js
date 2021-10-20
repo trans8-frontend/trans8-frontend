@@ -2,6 +2,8 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Card, Form, Input } from 'antd';
 import { Select } from 'antd';
+import './GetQoute.css'
+import elipse from '../../assets/Ellipse1.png'
 const { Option } = Select;
 
 const GetQoute = () => {
@@ -24,19 +26,18 @@ const GetQoute = () => {
     return (
         <div>
             <Container className="container-height mt-5 mb-4">
-               
                     <Row>
-                        <Col md={1} lg={1} sm={0}></Col>
-                        <Col md={10} lg={10} sm={12} className="card-style text-center">
-                        <Row>  
+                        <Col md={2} lg={2} sm={0}></Col>
+                        <Col md={8} lg={8} sm={12} className="card-style text-center">
+                        <Row className="mt-5">  
                         <Col md={6} lg={6} sm={12}>
-                            <h4>GET A QOUTE</h4>
-                            <p>We’d love to discuss our flexible delivery solutions with you! Provide your contact information and we’ll reach out to you!</p>
+                        <span className="top-head"><span className="bold"> GET A</span> QUOTE</span>
+                          <br/>  <span className="mt-3" style={{fontWeight:"400"}}>We’d love to discuss our flexible delivery solutions with you! Provide your contact information and we’ll reach out to you!</span>
                             <ul> 
-                                <li>ENTER ORIGIN AND DESTINATION</li>
-                                <li>COMPLETE YOUR SHIPMENT DETAIL</li>
-                                <li>GET AN ESTIMATED QUOTE</li>
-                                <li>PROCEED WITH ONLINE BOOKING </li>
+                                <li><img src={elipse} alt=""/>ENTER ORIGIN AND DESTINATION</li>
+                                {/* <li><img src={} alt=""/>COMPLETE YOUR SHIPMENT DETAIL</li>
+                                <li><img src={} alt=""/>GET AN ESTIMATED QUOTE</li>
+                                <li><img src={} alt=""/>PROCEED WITH ONLINE BOOKING </li> */}
                             </ul>
                         </Col>
                         <Col md={6} lg={6} sm={12}>
@@ -121,7 +122,7 @@ const GetQoute = () => {
                         </Col>
                         </Row>
                         </Col>
-                        <Col md={1} lg={1} sm={0}></Col>
+                        <Col md={2} lg={2} sm={0}></Col>
 
                     </Row>
              

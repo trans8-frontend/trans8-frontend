@@ -10,14 +10,15 @@ import Login from './pages/Login/Login';
 import Signup from './pages/SignUp/Signup';
 import Forgot from './pages/ForgotPassword/Forgot';
 import GetQoute from './pages/GetQuote/GetQoute';
+import DashboardPage from './pages/Landingpage/LandingPage';
 
 function App() {
   return (
     <Router>
       <div className="App">
-          <Routes path="/" component={Login} exact/>
+          <Routes path="/login" component={Login} exact/>
           <Routes path="/sign-up" component={Signup} />
-          <Routes path="/landingPage" component={LandingPage} />
+          <Routes path="/" component={DashboardPage} />
           <Routes path="/forgot-password" component={Forgot} />
           <Routes path="/get-quote" component={GetQoute}/>
       </div>

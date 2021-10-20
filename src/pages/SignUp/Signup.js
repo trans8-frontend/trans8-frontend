@@ -122,7 +122,7 @@ const Signup = () => {
 
                 <Row>
                   <p>
-                    Already a member ? <Link to="/" className="link-color">Login</Link>
+                    Already a member ? <Link to="/login" className="link-color">Login</Link>
                   </p>
                 </Row>
                 <Form.Item
