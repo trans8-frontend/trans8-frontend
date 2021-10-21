@@ -11,6 +11,7 @@ import Signup from './pages/SignUp/Signup';
 import Forgot from './pages/ForgotPassword/Forgot';
 import GetQoute from './pages/GetQuote/GetQoute';
 import DashboardPage from './pages/Landingpage/LandingPage'
+import PaymentPage from './pages/PaymentPage/PaymentPannel';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Routes path="/sign-up" component={Signup} />
           <Routes path="/forgot-password" component={Forgot} />
           <Routes path="/get-quote" component={GetQoute}/>
+          <Routes path="/payment" component={PaymentPage}/>
       </div>
     </Router>
   );

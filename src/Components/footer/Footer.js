@@ -19,8 +19,8 @@ const Footers = () => {
         </div>
         <div className="footer_1">
           <div className="second">
-            <MailIcon className="icon"></MailIcon>
-            <p className="para">info@trans8.com</p>
+          <MailIcon className="icon2"></MailIcon>
+            <p className="para2">Hello@trans8.com</p>
             <PhoneIcon className="icon2"></PhoneIcon>
             <p className="para2">444141242</p>
           </div>
