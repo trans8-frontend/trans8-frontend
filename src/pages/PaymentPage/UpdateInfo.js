@@ -1,12 +1,9 @@
 import React from "react";
-import { Container, Row, Col, option, select } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "../PaymentPage/UpdateInfo.css";
-import { Card, InputNumber } from "antd";
 import { Form, Input, Button, Checkbox } from "antd";
-import { Link } from "react-router-dom";
 import { user_registration } from "../../redux-services/user-services/user-services";
 import { Select } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 
@@ -25,12 +22,12 @@ const Signup = () => {
 
   return (
     <div>
-      <Container className="container-height mt-5 mb-4">
+      <Container className="container-height mt-0 mb-4">
         <Row>
           <Col></Col>
           <Col md={8} lg={8} sm={12}>
-            <Card bordered={true} className="card-style text-center">
-              <span className="top-head">
+            {/* <Card bordered={true} className="card-style text-center"> */}
+            {/* <span className="top-head">
                 <span className="bold"> UPDATE</span> ACCOUNT INFO
               </span>
               <br />
@@ -38,143 +35,140 @@ const Signup = () => {
                 We'd love to discuss our flexible delivery solutions with you!
                 provide your <br />
                 contact information and we'll reach out to you! .
-              </span>
-              <Form
-                className="mt-3"
-                name="basic"
-                labelCol={{ span: 6 }}
-                wrapperCol={{ span: 16 }}
-                initialValues={{
-                  remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
+              </span> */}
+            <Form
+              className="mt-3"
+              name="basic"
+              labelCol={{ span: 6 }}
+              wrapperCol={{ span: 16 }}
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+            >
+              <Form.Item
+                label="First name"
+                name="first_name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your username!",
+                  },
+                ]}
               >
-                <Form.Item
-                  label="First name"
-                  name="first_name"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your username!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="First name" />
-                </Form.Item>
-                <Form.Item
-                  label="Last name"
-                  name="last_name"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your last name!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Last name" />
-                </Form.Item>
+                <Input placeholder="First name" />
+              </Form.Item>
+              <Form.Item
+                label="Last name"
+                name="last_name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your last name!",
+                  },
+                ]}
+              >
+                <Input placeholder="Last name" />
+              </Form.Item>
 
-                <Form.Item
-                  label="Phone"
-                  name="phone_number"
-                  rules={[
-                    {
-                      required: true,
+              <Form.Item
+                label="Phone"
+                name="phone_number"
+                rules={[
+                  {
+                    required: true,
 
-                      message: "Please input your password!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Your phone" />
-                </Form.Item>
-                <Form.Item
-                  label="Email"
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                      type: "email",
-                      message: "Please input your email!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Your email" />
-                </Form.Item>
-                <Form.Item
-                  label="Address"
-                  name="address"
-                  rules={[
-                    {
-                      required: true,
-                      type: "address",
-                      message: "Please input your address!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Your address" />
-                </Form.Item>
-                <Form.Item
-                  label="City"
-                  name="city"
-                  rules={[
-                    {
-                      required: true,
-                      type: "city",
-                      message: "Please input your city!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Your city" />
-                </Form.Item>
-                <Form.Item
-                  label="Province"
-                  name="province"
-                  rules={[
-                    {
-                      required: true,
-                      type: "province",
-                      message: "Please input your province!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="Your province" />
-                </Form.Item>
+                    message: "Please input your password!",
+                  },
+                ]}
+              >
+                <Input placeholder="Your phone" />
+              </Form.Item>
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    type: "email",
+                    message: "Please input your email!",
+                  },
+                ]}
+              >
+                <Input placeholder="Your email" />
+              </Form.Item>
+              <Form.Item
+                label="Address"
+                name="address"
+                rules={[
+                  {
+                    required: true,
+                    type: "address",
+                    message: "Please input your address!",
+                  },
+                ]}
+              >
+                <Input placeholder="Your address" />
+              </Form.Item>
+              <Form.Item
+                label="City"
+                name="city"
+                rules={[
+                  {
+                    required: true,
+                    type: "city",
+                    message: "Please input your city!",
+                  },
+                ]}
+              >
+                <Input placeholder="Your city" />
+              </Form.Item>
+              <Form.Item
+                label="Province"
+                name="province"
+                rules={[
+                  {
+                    required: true,
+                    type: "province",
+                    message: "Please input your province!",
+                  },
+                ]}
+              >
+                <Input placeholder="Your province" />
+              </Form.Item>
 
-                <Form.Item
-                  label="Country"
-                  name="country"
-                  rules={[
-                    {
-                      required: true,
-                      type: "country",
-                      message: "Please input your country!",
-                    },
-                  ]}
-                >
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                  >
-                    <option selected>Countr</option>
-                    <option value="1">UAE</option>
-                    <option value="2">US</option>
-                    <option value="3">UK</option>
-                  </select>
-                </Form.Item>
-                <Form.Item
-                  wrapperCol={{
-                    offset: 6,
-                    span: 16,
-                  }}
-                >
-                  <Button type="primary" htmlType="submit">
-                    Update Information
-                  </Button>
-                </Form.Item>
-              </Form>
-            </Card>
+              <Form.Item
+                label="Country"
+                name="country"
+                rules={[
+                  {
+                    required: true,
+                    type: "country",
+                    message: "Please input your country!",
+                  },
+                ]}
+              >
+                <select class="form-select" aria-label="Default select example">
+                  <option value="1">Country</option>
+                  <option value="1">UAE</option>
+                  <option value="2">US</option>
+                  <option value="3">UK</option>
+                </select>
+              </Form.Item>
+              <Form.Item
+                wrapperCol={{
+                  offset: 6,
+                  span: 16,
+                }}
+              >
+                <Button htmlType="submit" className="w-100 light-blue-bg">
+                  Update Information
+                </Button>
+              </Form.Item>
+            </Form>
+            {/* </Card> */}
           </Col>
           <Col></Col>
         </Row>

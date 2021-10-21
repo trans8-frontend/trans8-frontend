@@ -39,7 +39,7 @@ p{
 }
 input[type='text'], input[type='password'], input[type='number'], textarea {
   -webkit-appearance: none;
-  height: 47px;
+  height: 40px;
   width: 100;
   background: #FFFFFF 0% 0% no-repeat padding-box !important;
 border: 1px solid #F2F2F2;
@@ -58,9 +58,9 @@ opacity: 1;
   max-width: 400px !important;
 }
 .ant-form-item-label > label {
-  height: 50px !important;
+  height: 40px !important;
   color: rgba(0, 0, 0, 0.85);
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
 }
 .link-color{

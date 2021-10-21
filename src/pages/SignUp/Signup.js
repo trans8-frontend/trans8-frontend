@@ -1,15 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Signup.css";
-import { Card, InputNumber } from "antd";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button,Card } from "antd";
 import { Link } from "react-router-dom";
 import { user_registration } from "../../redux-services/user-services/user-services";
 
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
+
 const Signup = () => {
   const onFinish = (values) => {
     user_registration(values);

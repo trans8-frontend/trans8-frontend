@@ -147,7 +147,7 @@
   }
   .footer_icon {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     background-color: black;
     padding-bottom: 10px;
     padding-right: 290px;
