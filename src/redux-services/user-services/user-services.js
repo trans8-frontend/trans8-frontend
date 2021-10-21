@@ -46,3 +46,26 @@ export const create_quote=(values)=>{
         message.error(err.response.data.message)
     })
 }
+
+export const autoAddressPick=(searchTerm , setCountry)=>{
+    axios.get(`http://ws1.postescanada-canadapost.ca/AddressComplete/Interactive/Find/v2.10/json3ex.ws?Key=XM62-WR75-UG23-GU69&Country=CAN&SearchTerm=${searchTerm}&LanguagePreference=en&LastId=&SearchFor=Everything&OrderBy=UserLocation&$block=true&$cache=true`)
+    .then(response=>{
+        console.log(response)
+        setCountry(response.data.Items)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+}
+
+export const autoCityPick=(countryId , setCity)=>{
+    console.log(countryId)
+    axios.get(`http://ws1.postescanada-canadapost.ca/AddressComplete/Interactive/RetrieveFormatted/v2.10/json3ex.ws?Key=XM62-WR75-UG23-GU69&Id=${countryId}&Source=${''}&$cache=true`)
+    .then(response=>{
+        console.log(response)
+        setCity(response.data?.Items[0])
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+}

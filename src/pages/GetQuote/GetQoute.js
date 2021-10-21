@@ -1,27 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { Card, Form, Input } from 'antd';
+import { Card, Form, Input , Button } from 'antd';
 import { Select } from 'antd';
 import './GetQoute.css'
 import elipse from '../../assets/Ellipse1.png'
-import { create_quote } from '../../redux-services/user-services/user-services';
+import { autoAddressPick, autoCityPick, create_quote } from '../../redux-services/user-services/user-services';
+import DimensionBar from './DimensionBar';
 const { Option } = Select;
 
 const GetQoute = () => {
-    function onChange(value) {
-        console.log(`selected ${value}`);
+    const [country, setCountry] = useState([])
+    const [city, setCity] = useState([])
+
+    const [country_to , setCountry_to] = useState([])
+    const [city_to, setCity_to] = useState([]) 
+
+    function onChange() {
     }
 
-    function onBlur() {
-        console.log('blur');
-    }
-
-    function onFocus() {
-        console.log('focus');
+    function onSelect(val, key) {
+        autoCityPick(key.value, setCity)
     }
 
     function onSearch(val) {
-        console.log('search:', val);
+        autoAddressPick(val, setCountry)
+    }
+
+    function onSearchTo(value) {
+        autoAddressPick(value, setCountry_to)
+    }
+
+    function onSelectTo(val , key){
+        autoCityPick(key.value, setCity_to)
     }
 
     const onFinish = (values) => {
@@ -58,7 +68,36 @@ const GetQoute = () => {
                                 </ul>
                             </Col>
                             <Col md={6} lg={6} sm={12}>
-                                <Form onFinish={onFinish}>
+                                <Form onFinish={onFinish}
+                                    fields={
+                                        [
+                                            {
+                                                name: "city",
+                                                value: city.City
+                                            },
+                                            {
+                                                name: "postal_code",
+                                                value: city.PostalCode
+                                            },
+                                            {
+                                                name: "provinance",
+                                                value: city.Province
+                                            },
+                                            {
+                                                name: "city_to",
+                                                value: city_to.City
+                                            },
+                                            {
+                                                name: "postal_code_to",
+                                                value: city_to.PostalCode
+                                            },
+                                            {
+                                                name: "province_to",
+                                                value: city_to.Province
+                                            },
+                                        ]
+                                    }
+                                >
                                     <h4>From</h4>
                                     <Form.Item name="country">
                                         <Select
@@ -66,75 +105,61 @@ const GetQoute = () => {
                                             style={{ width: 200 }}
                                             placeholder="Select a person"
                                             optionFilterProp="children"
-                                            onChange={onChange}
-                                       
+                                            onSelect={onSelect}
+                                            onSearch={onSearch}
                                             filterOption={(input, option) =>
                                                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                             }
                                         >
-                                            <Option value="jack">Jack</Option>
+                                            {country.length > 1 && country.map((e, i) => <Option key={`country${i}`} value={e?.Id}>{e?.Text}</Option>)}
                                         </Select>
                                     </Form.Item>
-                                    <Form.Item name="country">
-                                        <Select
-                                            showSearch
-                                            style={{ width: 200 }}
-                                            placeholder="Select a person"
-                                            optionFilterProp="children"
-                                            onChange={onChange}
-                                           
-                                            filterOption={(input, option) =>
-                                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                            }
-                                        >
-                                            <Option value="jack">Jack</Option>
-                                        </Select>
+
+                                    <Form.Item name="city">
+                                        <Input defaultValue={city?.City} />
                                     </Form.Item>
-                                    <Form.Item name="country">
-                                        <Input />
+                                    <Form.Item name="provinance">
+                                        <Input defaultValue={city?.Province} />
+                                    </Form.Item>
+                                    <Form.Item name="postal_code">
+                                        <Input defaultValue={city?.PostalCode} />
                                     </Form.Item>
 
                                     <h4>To</h4>
-                                    <Form.Item name="country">
+                                    <Form.Item name="country_to">
                                         <Select
                                             showSearch
                                             style={{ width: 200 }}
-                                            placeholder="Select a person"
                                             optionFilterProp="children"
-                                            onChange={onChange}
-                                          
+                                            onSearch={onSearchTo}
+                                            onSelect={onSelectTo}
                                             filterOption={(input, option) =>
                                                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                             }
                                         >
-                                            <Option value="jack">Jack</Option>
+                                           {country_to.length > 1 && country_to.map((e, i) => <Option key={`country${i}`} value={e?.Id}>{e?.Text}</Option>)}
                                         </Select>
                                     </Form.Item>
-                                    <Form.Item name="country">
-                                        <Select
-                                            showSearch
-                                            style={{ width: 200 }}
-                                            placeholder="Select a person"
-                                            optionFilterProp="children"
-                                            onChange={onChange}
-                                           
-                                            filterOption={(input, option) =>
-                                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                            }
-                                        >
-                                            <Option value="jack">Jack</Option>
-                                        </Select>
+                                    <Form.Item name="city_to">
+                                        <Input value="" />
                                     </Form.Item>
-                                    <Form.Item name="country">
-                                        <Input />
+                                    <Form.Item name="province_to">
+                                        <Input value="" />
+                                    </Form.Item>
+                                    <Form.Item name="postal_code_to">
+                                        <Input value="" />
+                                    </Form.Item>
+                                    <Form.Item>
+                                        <Button className="submit-btn" style={{width:"100%"}}>DESCRIBE YOUR SHIPMENT</Button>
                                     </Form.Item>
                                 </Form>
                             </Col>
                         </Row>
                     </Col>
                     <Col md={2} lg={2} sm={0}></Col>
-
                 </Row>
+
+                <DimensionBar />
 
             </Container>
         </div>
